@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap ui Template</title>
+
+    <!-- Bootstrap -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div id="radiogroup"></div>
+
+<div id="radiogroupinline"></div>
+
+<div id="checkboxgroup"></div>
+
+<div id="checkboxgroupinline"></div>
+
+<div id="button"></div>
+
+<div id="textbox"></div>
+
+<div id="dropbox"></div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/bootstrapui/bootstrapui.js"></script>
+<script>
+    $(document).ready(function () {
+
+        //radio
+        $("#radiogroup").append($.bootstrapui_radio_group("radiogroup",["選項1","選項2","選項3"]));
+
+        //radio_inline
+        $("#radiogroupinline").append($.bootstrapui_radio_inline_group("radiogroupinline",["選項1","選項2","選項3"]));
+
+        //checkbox
+        $("#checkboxgroup").append($.bootstrapui_checkbox_group(["選項1","選項2","選項3"]));
+
+        //checkbox_inline
+        $("#checkboxgroupinline").append($.bootstrapui_checkbox_inline_group(["選項1","選項2","選項3"]));
+
+
+        //輸入框
+        $("#textbox").append($.bootstrapui_textbox("text", "我是文本框"));
+
+        //按鈕
+        $("#button").append($.bootstrapui_button("我是按鈕", "btn-primary"));
+
+
+        //下拉框
+        var btnlabel = "我是下拉框";
+        var btnclass = "btn-primary";
+        var selectfield = ["入款銀行0", "入款銀行1", "入款銀行2"];
+        $("#dropbox").append($.bootstrapui_dropbox(btnlabel, btnclass, selectfield));
+    });
+</script>
+</body>
+</html>
