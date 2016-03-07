@@ -12,7 +12,7 @@
         for(var i =0; i<radioSelector.length; i++){
             radioItems += "<div class='radio'><label><input type='radio' name='"+radioName+"radio' id='"+radioName+i+"' value ='"+i+"'>"+radioSelector[i]+"</label></div>";
         }
-        var radioGroup = "<div class='form-group'>"+radioItems+"</div>";
+        var radioGroup = $("<div class='form-group'>"+radioItems+"</div>");
         runFunction(callback);
         return radioGroup;
     };
@@ -22,7 +22,7 @@
         for(var i =0; i<radioSelector.length; i++){
             radioItems += "<label class='radio-inline'><input type='radio' name='"+radioName+"radio' id='"+radioName+i+"' value ='"+i+"'>"+radioSelector[i]+"</label>";
         }
-        var radioGroup = "<div class='form-group'>"+radioItems+"</div>";
+        var radioGroup = $("<div class='form-group'>"+radioItems+"</div>");
         runFunction(callback);
         return radioGroup;
     };
@@ -33,7 +33,7 @@
         for(var i =0; i<checkboxSelector.length; i++){
             checkboxItems += "<div class='checkbox'><label><input type='checkbox' id='"+checkboxName+i+"' value ='"+i+"'>"+checkboxSelector[i]+"</label></div>";
         }
-        var checkboxGroup = "<div class='form-group'>"+checkboxItems+"</div>";
+        var checkboxGroup = $("<div class='form-group'>"+checkboxItems+"</div>");
         runFunction(callback);
         return checkboxGroup;
     };
@@ -43,19 +43,19 @@
         for(var i =0; i<checkboxSelector.length; i++){
             checkboxItems += "<label class='checkbox-inline'><input type='checkbox' id='"+checkboxName+i+"' value ='"+i+"'>"+checkboxSelector[i]+"</label>";
         }
-        var checkboxGroup = "<div class='form-group'>"+checkboxItems+"</div>";
+        var checkboxGroup = $("<div class='form-group'>"+checkboxItems+"</div>");
         runFunction(callback);
         return checkboxGroup;
     };
 
     $.bootstrapui_textbox = function(textName,textboxtype,placeholder,callback){
-        var textbox = "<input type='"+textboxtype+"' id='"+textName+"' class='form-control' placeholder='"+placeholder+"'></div>";
+        var textbox = $("<input type='"+textboxtype+"' id='"+textName+"' class='form-control' placeholder='"+placeholder+"'></div>");
         runFunction(callback);
         return textbox;
     };
 
     $.bootstrapui_button = function(btnName,btnlabel,btnclass,callback){
-        var button = "<button id='"+btnName+"'    class='btn btn-"+btnclass+"' type='submit'>"+btnlabel+"</button>";
+        var button = $("<button id='"+btnName+"'    class='btn btn-"+btnclass+"' type='submit'>"+btnlabel+"</button>");
         runFunction(callback);
         return button;
     };
