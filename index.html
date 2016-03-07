@@ -42,30 +42,48 @@
     $(document).ready(function () {
 
         //radio
-        $("#radiogroup").append($.bootstrapui_radio_group("radiogroup",["選項1","選項2","選項3"]));
+        var radioboxName = "radiogroup";
+        var radioSelector = ["選項1","選項2","選項3"];
+        $("#radiogroup").append($.bootstrapui_radio_group(radioboxName,radioSelector));
 
         //radio_inline
-        $("#radiogroupinline").append($.bootstrapui_radio_inline_group("radiogroupinline",["選項1","選項2","選項3"]));
+        var radioboxInlineName = "radiogroupinline";
+        var radioboxInlineSelector = ["選項1","選項2","選項3"];
+        $("#radiogroupinline").append($.bootstrapui_radio_inline_group(radioboxInlineName,radioboxInlineSelector));
+
+
 
         //checkbox
-        $("#checkboxgroup").append($.bootstrapui_checkbox_group(["選項1","選項2","選項3"]));
+        var checkboxName = "checkboxgroup";
+        var checkboxSelector = ["選項1","選項2","選項3"];
+        $("#checkboxgroup").append($.bootstrapui_checkbox_group(checkboxName,checkboxSelector));
+
 
         //checkbox_inline
-        $("#checkboxgroupinline").append($.bootstrapui_checkbox_inline_group(["選項1","選項2","選項3"]));
+        var checkboxInlineName = "checkboxgroupinline";
+        var checkboxInlineSelector = ["選項1","選項2","選項3"];
+        $("#checkboxgroupinline").append($.bootstrapui_checkbox_inline_group(checkboxInlineName,checkboxInlineSelector));
 
 
         //輸入框
-        $("#textbox").append($.bootstrapui_textbox("text", "我是文本框"));
+        var textName = "textbox";
+        var textboxtype = "text";
+        var placeholder = "我是文本框";
+        $("#textbox").append($.bootstrapui_textbox(textName,textboxtype, placeholder));
 
         //按鈕
-        $("#button").append($.bootstrapui_button("我是按鈕", "btn-primary"));
+        var btnName = "button";
+        var btnlabel = "我是按鈕";
+        var btnclass = "primary";
+        $("#button").append($.bootstrapui_button(btnName,btnlabel, btnclass));
 
 
         //下拉框
-        var btnlabel = "我是下拉框";
-        var btnclass = "btn-primary";
+        var dropboxName = "dropbox";
+        var dropboxBtnlabel = "我是下拉框";
+        var dropboxBtnclass2 = "btn-primary";
         var selectfield = ["入款銀行0", "入款銀行1", "入款銀行2"];
-        $("#dropbox").append($.bootstrapui_dropbox(btnlabel, btnclass, selectfield));
+        $("#dropbox").append($.bootstrapui_dropbox(dropboxName,dropboxBtnlabel, dropboxBtnclass2, selectfield));
     });
 </script>
 </body>

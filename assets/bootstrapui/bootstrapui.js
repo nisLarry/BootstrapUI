@@ -28,42 +28,42 @@
     };
 
 
-    $.bootstrapui_checkbox_group = function(checkboxSelector,callback){
+    $.bootstrapui_checkbox_group = function(checkboxName,checkboxSelector,callback){
         var checkboxItems = "";
         for(var i =0; i<checkboxSelector.length; i++){
-            checkboxItems += "<div class='checkbox'><label><input type='checkbox' value ='"+i+"'>"+checkboxSelector[i]+"</label></div>";
+            checkboxItems += "<div class='checkbox'><label><input type='checkbox' id='"+checkName+i+"' value ='"+i+"'>"+checkboxSelector[i]+"</label></div>";
         }
         var checkboxGroup = "<div class='form-group'>"+checkboxItems+"</div>";
         runFunction(callback);
         return checkboxGroup;
     };
 
-    $.bootstrapui_checkbox_inline_group = function(checkboxSelector,callback){
+    $.bootstrapui_checkbox_inline_group = function(checkboxName,checkboxSelector,callback){
         var checkboxItems = "";
         for(var i =0; i<checkboxSelector.length; i++){
-            checkboxItems += "<label class='checkbox-inline'><input type='checkbox' value ='"+i+"'>"+checkboxSelector[i]+"</label>";
+            checkboxItems += "<label class='checkbox-inline'><input type='checkbox' id='"+checkboxName+i+"' value ='"+i+"'>"+checkboxSelector[i]+"</label>";
         }
         var checkboxGroup = "<div class='form-group'>"+checkboxItems+"</div>";
         runFunction(callback);
         return checkboxGroup;
     };
 
-    $.bootstrapui_textbox = function(textboxtype,placeholder,callback){
-        var textbox = "<input type='"+textboxtype+"' class='form-control' placeholder='"+placeholder+"'></div>";
+    $.bootstrapui_textbox = function(textName,textboxtype,placeholder,callback){
+        var textbox = "<input type='"+textboxtype+"' id='"+textName+"' class='form-control' placeholder='"+placeholder+"'></div>";
         runFunction(callback);
         return textbox;
     };
 
-    $.bootstrapui_button = function(btnlabel,btnclass,callback){
-        var button = "<button class='btn "+btnclass+"' type='submit'>"+btnlabel+"</button>";
+    $.bootstrapui_button = function(btnName,btnlabel,btnclass,callback){
+        var button = "<button id='"+btnName+"'    class='btn "+btnclass+"' type='submit'>"+btnlabel+"</button>";
         runFunction(callback);
         return button;
     };
 
-    $.bootstrapui_dropbox = function (btnlabel, btnclass, selectfield, callback) {
+    $.bootstrapui_dropbox = function (dropboxName,btnlabel, btnclass, selectfield, callback) {
         var dropboxselectitem = "";
         for (var i =0; i < selectfield.length; i++){
-            dropboxselectitem +="<li>"+selectfield[i]+"</li>";
+            dropboxselectitem +="<li id='"+dropboxName+i+"'>"+selectfield[i]+"</li>";
         }
         var dropboxselector = "<ul id='bank_deposit_selector' class='dropdown-menu' aria-labelledby='bank_deposit_btn'>" + dropboxselectitem + "</ul>";
         var dropbutton =
