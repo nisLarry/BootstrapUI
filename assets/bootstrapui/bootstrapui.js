@@ -31,7 +31,7 @@
     $.bootstrapui_checkbox_group = function(checkboxName,checkboxSelector,callback){
         var checkboxItems = "";
         for(var i =0; i<checkboxSelector.length; i++){
-            checkboxItems += "<div class='checkbox'><label><input type='checkbox' id='"+checkName+i+"' value ='"+i+"'>"+checkboxSelector[i]+"</label></div>";
+            checkboxItems += "<div class='checkbox'><label><input type='checkbox' id='"+checkboxName+i+"' value ='"+i+"'>"+checkboxSelector[i]+"</label></div>";
         }
         var checkboxGroup = "<div class='form-group'>"+checkboxItems+"</div>";
         runFunction(callback);
@@ -55,7 +55,7 @@
     };
 
     $.bootstrapui_button = function(btnName,btnlabel,btnclass,callback){
-        var button = "<button id='"+btnName+"'    class='btn "+btnclass+"' type='submit'>"+btnlabel+"</button>";
+        var button = "<button id='"+btnName+"'    class='btn btn-"+btnclass+"' type='submit'>"+btnlabel+"</button>";
         runFunction(callback);
         return button;
     };

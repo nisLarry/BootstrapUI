@@ -44,38 +44,44 @@
         //radio
         var radioboxName = "radiogroup";
         var radioSelector = ["選項1","選項2","選項3"];
-        $("#radiogroup").append($.bootstrapui_radio_group(radioboxName,radioSelector));
+        var bootstrapui_radio_group = $.bootstrapui_radio_group(radioboxName,radioSelector);
+        $("#radiogroup").append(bootstrapui_radio_group);
 
         //radio_inline
         var radioboxInlineName = "radiogroupinline";
         var radioboxInlineSelector = ["選項1","選項2","選項3"];
-        $("#radiogroupinline").append($.bootstrapui_radio_inline_group(radioboxInlineName,radioboxInlineSelector));
+        var bootstrapui_radio_inline_group = $.bootstrapui_radio_inline_group(radioboxInlineName,radioboxInlineSelector);
+        $("#radiogroupinline").append(bootstrapui_radio_inline_group);
 
 
 
         //checkbox
         var checkboxName = "checkboxgroup";
         var checkboxSelector = ["選項1","選項2","選項3"];
-        $("#checkboxgroup").append($.bootstrapui_checkbox_group(checkboxName,checkboxSelector));
+        var bootstrapui_checkbox_group = $.bootstrapui_checkbox_group(checkboxName,checkboxSelector);
+        $("#checkboxgroup").append(bootstrapui_checkbox_group);
 
 
         //checkbox_inline
         var checkboxInlineName = "checkboxgroupinline";
         var checkboxInlineSelector = ["選項1","選項2","選項3"];
-        $("#checkboxgroupinline").append($.bootstrapui_checkbox_inline_group(checkboxInlineName,checkboxInlineSelector));
+        var bootstrapui_checkbox_inline_group = $.bootstrapui_checkbox_inline_group(checkboxInlineName,checkboxInlineSelector);
+        $("#checkboxgroupinline").append(bootstrapui_checkbox_inline_group);
 
 
         //輸入框
         var textName = "textbox";
         var textboxtype = "text";
         var placeholder = "我是文本框";
-        $("#textbox").append($.bootstrapui_textbox(textName,textboxtype, placeholder));
+        var bootstrapui_textbox = $.bootstrapui_textbox(textName,textboxtype, placeholder);
+        $("#textbox").append(bootstrapui_textbox);
 
         //按鈕
         var btnName = "button";
         var btnlabel = "我是按鈕";
         var btnclass = "primary";
-        $("#button").append($.bootstrapui_button(btnName,btnlabel, btnclass));
+        var bootstrapui_button = $.bootstrapui_button(btnName,btnlabel, btnclass);
+        $("#button").append(bootstrapui_button);
 
 
         //下拉框
@@ -83,7 +89,8 @@
         var dropboxBtnlabel = "我是下拉框";
         var dropboxBtnclass2 = "btn-primary";
         var selectfield = ["入款銀行0", "入款銀行1", "入款銀行2"];
-        $("#dropbox").append($.bootstrapui_dropbox(dropboxName,dropboxBtnlabel, dropboxBtnclass2, selectfield));
+        var bootstrapui_dropbox = $.bootstrapui_dropbox(dropboxName,dropboxBtnlabel, dropboxBtnclass2, selectfield);
+        $("#dropbox").append(bootstrapui_dropbox);
     });
 </script>
 </body>
