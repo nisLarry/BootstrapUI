@@ -19,19 +19,13 @@
 </head>
 <body>
 
-<div id="radiogroup"></div>
+<div>
+    <h1>我是表單</h1>
+    <form id="testform">
 
-<div id="radiogroupinline"></div>
+    </form>
+</div>
 
-<div id="checkboxgroup"></div>
-
-<div id="checkboxgroupinline"></div>
-
-<div id="button"></div>
-
-<div id="textbox"></div>
-
-<div id="dropbox"></div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
@@ -45,13 +39,11 @@
         var radioboxName = "radiogroup";
         var radioSelector = ["選項1","選項2","選項3"];
         var bootstrapui_radio_group = $.bootstrapui_radio_group(radioboxName,radioSelector);
-        $("#radiogroup").append(bootstrapui_radio_group);
 
         //radio_inline
         var radioboxInlineName = "radiogroupinline";
         var radioboxInlineSelector = ["選項1","選項2","選項3"];
         var bootstrapui_radio_inline_group = $.bootstrapui_radio_inline_group(radioboxInlineName,radioboxInlineSelector);
-        $("#radiogroupinline").append(bootstrapui_radio_inline_group);
 
 
 
@@ -59,14 +51,12 @@
         var checkboxName = "checkboxgroup";
         var checkboxSelector = ["選項1","選項2","選項3"];
         var bootstrapui_checkbox_group = $.bootstrapui_checkbox_group(checkboxName,checkboxSelector);
-        $("#checkboxgroup").append(bootstrapui_checkbox_group);
 
 
         //checkbox_inline
         var checkboxInlineName = "checkboxgroupinline";
         var checkboxInlineSelector = ["選項1","選項2","選項3"];
         var bootstrapui_checkbox_inline_group = $.bootstrapui_checkbox_inline_group(checkboxInlineName,checkboxInlineSelector);
-        $("#checkboxgroupinline").append(bootstrapui_checkbox_inline_group);
 
 
         //輸入框
@@ -74,14 +64,12 @@
         var textboxtype = "text";
         var placeholder = "我是文本框";
         var bootstrapui_textbox = $.bootstrapui_textbox(textName,textboxtype, placeholder);
-        $("#textbox").append(bootstrapui_textbox);
 
         //按鈕
         var btnName = "button";
         var btnlabel = "我是按鈕";
         var btnclass = "primary";
         var bootstrapui_button = $.bootstrapui_button(btnName,btnlabel, btnclass);
-        $("#button").append(bootstrapui_button);
 
 
         //下拉框
@@ -90,7 +78,15 @@
         var dropboxBtnclass2 = "btn-primary";
         var selectfield = ["入款銀行0", "入款銀行1", "入款銀行2"];
         var bootstrapui_dropbox = $.bootstrapui_dropbox(dropboxName,dropboxBtnlabel, dropboxBtnclass2, selectfield);
-        $("#dropbox").append(bootstrapui_dropbox);
+
+
+        $("#testform")
+                .append(bootstrapui_radio_group)
+                .append(bootstrapui_radio_inline_group)
+                .append(bootstrapui_checkbox_group)
+                .append(bootstrapui_textbox)
+                .append(bootstrapui_button)
+                .append(bootstrapui_dropbox);
     });
 </script>
 </body>
