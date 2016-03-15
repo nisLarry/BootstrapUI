@@ -54,8 +54,11 @@
     };
 
     $.bootstrapui_button = function (btnName, btnlabel, btnclass, callback) {
-        var button = $("<button id='" + btnName + "' name='" + btnName + "'  class='btn btn-" + btnclass + "' type='submit'>" + btnlabel + "</button>");
-        runFunction(callback);
+        var button = $("<button id='" + btnName + "' name='" + btnName + "'  class='btn btn-" + btnclass + "'>" + btnlabel + "</button>");
+        button.on("click",function(e){
+            e.preventDefault();
+            runFunction(callback);
+        })
         return button;
     };
 
