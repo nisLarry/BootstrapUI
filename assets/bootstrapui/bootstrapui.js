@@ -142,7 +142,7 @@
         var dropbutton =
             "<button class='btn " + btnclass + " dropdown-toggle' type='button' id='"+dropboxName+"_btn' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'><span class='btn-text'>" + firstValue + "</span><span class='caret'></span></button>" + dropboxselector;
 
-        var dropbox = $("<div id='" + dropboxName + "' class='dropdown' dropbox-value='"+firstKey+"'>" + dropbutton + dropboxselector + "</div>");
+        var dropbox = $("<div id='" + dropboxName + "' class='dropdown btn-group' dropbox-value='"+firstKey+"'>" + dropbutton + dropboxselector + "</div>");
 
         dropbox.find("ul>li").on("click", function (e) {
             dropbox.find("span.btn-text").text($(this).text());
@@ -150,6 +150,7 @@
             var dropboxid = $(this).attr("id");
             runFunction(callback(dropboxid));
         });
+
         return dropbox;
 
     };
