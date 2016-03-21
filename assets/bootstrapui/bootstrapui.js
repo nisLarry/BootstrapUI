@@ -12,34 +12,39 @@
 
     /**
      * 建立一个垂直的单选群组
-     * @param radioName
-     * @param radioSelector
-     * @param callback
+     * @param radioName 單選框群組名稱
+     * @param radioSelector 單選框選項，請使用物件{}形式
+     * @param callback 自定義回調函數
      * @returns {*|HTMLElement}
      */
     $.bootstrapui_radio_group = function (radioName, radioSelector, callback) {
+        radioSelector = radioSelector || {0:"請選擇..."};
         var radioItems = "";
-        for (var i = 0; i < radioSelector.length; i++) {
-            radioItems += "<div class='radio'><label><input type='radio' name='" + radioName + "radio' id='" + radioName + i + "' value ='" + i + "'>" + radioSelector[i] + "</label></div>";
+
+        for (var k in radioSelector) {
+            radioItems += "<div class='radio'><label><input type='radio' name='" + radioName +"_radio' id='" + radioName +"_" + k + "' value ='" + k + "'>" + radioSelector[k] + "</label></div>";
         }
-        var radioGroup = $("<div class='form-group'>" + radioItems + "</div>");
+
+        var radioGroup = $("<div id='"+radioName+"' class='form-group'>" + radioItems + "</div>");
         runFunction(callback);
         return radioGroup;
     };
 
     /**
      * 建立一个水平的单选群组
-     * @param radioName
-     * @param radioSelector
-     * @param callback
+     * @param radioName 單選框群組名稱
+     * @param radioSelector 單選框選項，請使用物件{}形式
+     * @param callback 自定義回調函數
      * @returns {*|HTMLElement}
      */
     $.bootstrapui_radio_inline_group = function (radioName, radioSelector, callback) {
+        radioSelector = radioSelector || {0:"請選擇..."};
         var radioItems = "";
-        for (var i = 0; i < radioSelector.length; i++) {
-            radioItems += "<label class='radio-inline'><input type='radio' name='" + radioName + "radio' id='" + radioName + i + "' value ='" + i + "'>" + radioSelector[i] + "</label>";
+
+        for (var k in radioSelector) {
+            radioItems += "<label class='radio-inline radio inline'><input type='radio' name='" + radioName +"_radio' id='" + radioName +"_"+ k + "' value ='" + k + "'>" + radioSelector[k] + "</label>"
         }
-        var radioGroup = $("<div class='form-group'>" + radioItems + "</div>");
+        var radioGroup = $("<div id='"+radioName+"' class='form-group'>" + radioItems + "</div>");
         runFunction(callback);
         return radioGroup;
     };
@@ -47,34 +52,36 @@
 
     /**
      * 建立一个垂直的checkbox群组
-     * @param checkboxName
-     * @param checkboxSelector
-     * @param callback
+     * @param checkboxName checkbox選項群組名稱
+     * @param checkboxSelector checkbox選項，請使用物件{}形式
+     * @param callback 自定義回調函數
      * @returns {*|HTMLElement}
      */
     $.bootstrapui_checkbox_group = function (checkboxName, checkboxSelector, callback) {
+        checkboxSelector = checkboxSelector || {0:"請選擇..."};
         var checkboxItems = "";
-        for (var i = 0; i < checkboxSelector.length; i++) {
-            checkboxItems += "<div class='checkbox'><label><input type='checkbox' id='" + checkboxName + i + "' name='" + checkboxName + i + "' value ='" + i + "'>" + checkboxSelector[i] + "</label></div>";
+        for (var k in checkboxSelector) {
+            checkboxItems += "<div class='checkbox'><label><input type='checkbox' id='" + checkboxName +"_checkbox_"+ k + "' name='" + checkboxName +"_checkbox_"+ k + "' value ='" + k + "'>" + checkboxSelector[k] + "</label></div>";
         }
-        var checkboxGroup = $("<div class='form-group'>" + checkboxItems + "</div>");
+        var checkboxGroup = $("<div id='"+checkboxName+"' class='form-group'>" + checkboxItems + "</div>");
         runFunction(callback);
         return checkboxGroup;
     };
 
     /**
      * 建立一个水平的checkbox群组
-     * @param checkboxName
-     * @param checkboxSelector
-     * @param callback
+     * @param checkboxName checkbox選項群組名稱
+     * @param checkboxSelector checkbox選項，請使用物件{}形式
+     * @param callback 自定義回調函數
      * @returns {*|HTMLElement}
      */
     $.bootstrapui_checkbox_inline_group = function (checkboxName, checkboxSelector, callback) {
+        checkboxSelector = checkboxSelector || {0:"請選擇..."};
         var checkboxItems = "";
-        for (var i = 0; i < checkboxSelector.length; i++) {
-            checkboxItems += "<label class='checkbox-inline'><input type='checkbox' id='" + checkboxName + i + "' name='" + checkboxName + i + "' value ='" + i + "'>" + checkboxSelector[i] + "</label>";
+        for (var k in checkboxSelector) {
+            checkboxItems += "<label class='checkbox-inline checkbox inline'><input type='checkbox' id='" + checkboxName +"_checkbox_"+ k + "' name='" + checkboxName +"_checkbox_"+ k + "' value ='" + k + "'>" + checkboxSelector[k] + "</label>";
         }
-        var checkboxGroup = $("<div class='form-group'>" + checkboxItems + "</div>");
+        var checkboxGroup = $("<div id='"+checkboxName+"' class='form-group'>" + checkboxItems + "</div>");
         runFunction(callback);
         return checkboxGroup;
     };
@@ -100,10 +107,10 @@
 
     /**
      * 建立一个按钮
-     * @param btnName
-     * @param btnlabel
-     * @param btnclass
-     * @param callback
+     * @param btnName 按鈕名稱
+     * @param btnlabel 按鈕顯示文字
+     * @param btnclass 按鈕類型
+     * @param callback 自定義回調函數
      * @returns {*|HTMLElement}
      */
     $.bootstrapui_button = function (btnName, btnlabel, btnclass, callback) {
@@ -117,13 +124,14 @@
 
     /**
      * 建立一个下拉选单
-     * @param dropboxName
-     * @param btnclass
-     * @param selectfield
-     * @param callback
+     * @param dropboxName 下拉選單控件名稱
+     * @param btnclass 下拉選單按鈕類型
+     * @param selectfield  下拉選單選項，請使用物件{}形式
+     * @param callback 自定義回調函數
      * @returns {*|HTMLElement}
      */
     $.bootstrapui_dropbox = function (dropboxName, btnclass, selectfield, callback) {
+        selectfield = selectfield || {0:"請選擇..."}
         var dropboxselectitem = "";
         var firstValue=selectfield[Object.keys(selectfield)[0]];
         var firstKey = Object.keys(selectfield)[0];
@@ -148,12 +156,12 @@
 
     /**
      * 建立一个面板 (Bootstrap3 限定)
-     * @param panelName
-     * @param panelClass
-     * @param panelTitle
-     * @param panelContent
-     * @param panelfooter
-     * @param callback
+     * @param panelName 面板名稱
+     * @param panelClass 面板類型
+     * @param panelTitle 面板標題
+     * @param panelContent 面板內容
+     * @param panelfooter 面板頁腳
+     * @param callback 回調函數
      * @returns {*|HTMLElement}
      */
     $.bootstrapui_panel = function(panelName, panelClass,panelTitle,panelContent,panelfooter,callback){
@@ -163,14 +171,16 @@
     };
 
     /**
-     * 建立一個提醒視窗
-     * @param alertName
-     * @param alertClass
-     * @param alertContent
+     * 建立一個提醒框
+     * @param alertName 提醒框名稱
+     * @param alertClass 提醒框類型
+     * @param alertContent 提醒框內容
+     * @param callback 回調函數
      * @returns {*|HTMLElement}
      */
-    $.bootstrapui_alert = function(alertName,alertClass,alertContent){
+    $.bootstrapui_alert = function(alertName,alertClass,alertContent,callback){
         var alert = $("<div id='"+alertName+"' class='alert alert-"+alertClass+"' role='alert'>"+alertContent+"</div>");
+        runFunction(callback);
         return alert;
     }
 })(jQuery);
