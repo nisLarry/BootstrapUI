@@ -1,11 +1,22 @@
 (function ($) {
 
+    /**
+     * 检测是不是方法，如果是方法就执行
+     * @param functionToCheck
+     */
     function runFunction(functionToCheck) {
         if (typeof functionToCheck === 'function') {
             functionToCheck();
         }
     }
 
+    /**
+     * 建立一个垂直的单选群组
+     * @param radioName
+     * @param radioSelector
+     * @param callback
+     * @returns {*|HTMLElement}
+     */
     $.bootstrapui_radio_group = function (radioName, radioSelector, callback) {
         var radioItems = "";
         for (var i = 0; i < radioSelector.length; i++) {
@@ -16,6 +27,13 @@
         return radioGroup;
     };
 
+    /**
+     * 建立一个水平的单选群组
+     * @param radioName
+     * @param radioSelector
+     * @param callback
+     * @returns {*|HTMLElement}
+     */
     $.bootstrapui_radio_inline_group = function (radioName, radioSelector, callback) {
         var radioItems = "";
         for (var i = 0; i < radioSelector.length; i++) {
@@ -27,6 +45,13 @@
     };
 
 
+    /**
+     * 建立一个垂直的checkbox群组
+     * @param checkboxName
+     * @param checkboxSelector
+     * @param callback
+     * @returns {*|HTMLElement}
+     */
     $.bootstrapui_checkbox_group = function (checkboxName, checkboxSelector, callback) {
         var checkboxItems = "";
         for (var i = 0; i < checkboxSelector.length; i++) {
@@ -37,6 +62,13 @@
         return checkboxGroup;
     };
 
+    /**
+     * 建立一个水平的checkbox群组
+     * @param checkboxName
+     * @param checkboxSelector
+     * @param callback
+     * @returns {*|HTMLElement}
+     */
     $.bootstrapui_checkbox_inline_group = function (checkboxName, checkboxSelector, callback) {
         var checkboxItems = "";
         for (var i = 0; i < checkboxSelector.length; i++) {
@@ -47,12 +79,33 @@
         return checkboxGroup;
     };
 
-    $.bootstrapui_textbox = function (textName, textboxtype, placeholder, callback) {
-        var textbox = $("<input type='" + textboxtype + "' id='" + textName + "' name='" + textName + "' class='form-control' placeholder='" + placeholder + "'></div>");
+    /**
+     * 建立一个文本框
+     * @param textName 文本框id、name
+     * @param textboxtype 文本框類型
+     * @param placeholder 提示訊息
+     * @param defaultValue 預設值
+     * @param isOnlyRead 是否唯讀
+     * @param callback 回調函數
+     * @returns {*|HTMLElement}
+     */
+    $.bootstrapui_textbox = function (textName, textboxtype, placeholder,defaultValue,isOnlyRead ,callback) {
+        isOnlyRead= isOnlyRead ? "disabled" : "";
+        placeholder = placeholder || "";
+        defaultValue = defaultValue || "";
+        var textbox = $("<input type='" + textboxtype + "' id='" + textName + "' name='" + textName + "' class='form-control' placeholder='" + placeholder + "' value='"+defaultValue+"' "+isOnlyRead+" ></div>");
         runFunction(callback);
         return textbox;
     };
 
+    /**
+     * 建立一个按钮
+     * @param btnName
+     * @param btnlabel
+     * @param btnclass
+     * @param callback
+     * @returns {*|HTMLElement}
+     */
     $.bootstrapui_button = function (btnName, btnlabel, btnclass, callback) {
         var button = $("<button id='" + btnName + "' name='" + btnName + "'  class='btn btn-" + btnclass + "'>" + btnlabel + "</button>");
         button.on("click",function(e){
@@ -62,6 +115,14 @@
         return button;
     };
 
+    /**
+     * 建立一个下拉选单
+     * @param dropboxName
+     * @param btnclass
+     * @param selectfield
+     * @param callback
+     * @returns {*|HTMLElement}
+     */
     $.bootstrapui_dropbox = function (dropboxName, btnclass, selectfield, callback) {
         var dropboxselectitem = "";
         var firstValue=selectfield[Object.keys(selectfield)[0]];
@@ -84,4 +145,32 @@
         return dropbox;
 
     };
+
+    /**
+     * 建立一个面板 (Bootstrap3 限定)
+     * @param panelName
+     * @param panelClass
+     * @param panelTitle
+     * @param panelContent
+     * @param panelfooter
+     * @param callback
+     * @returns {*|HTMLElement}
+     */
+    $.bootstrapui_panel = function(panelName, panelClass,panelTitle,panelContent,panelfooter,callback){
+        var panel = $("<div id='"+panelName+"' class='panel panel-"+panelClass+"'><div class='panel-title'>"+panelTitle+"</div><div class='panel-body'>"+panelContent+"</div><div class='panel-footer'>"+panelfooter+"</div></div>")
+        runFunction(callback);
+        return panel;
+    };
+
+    /**
+     * 建立一個提醒視窗
+     * @param alertName
+     * @param alertClass
+     * @param alertContent
+     * @returns {*|HTMLElement}
+     */
+    $.bootstrapui_alert = function(alertName,alertClass,alertContent){
+        var alert = $("<div id='"+alertName+"' class='alert alert-"+alertClass+"' role='alert'>"+alertContent+"</div>");
+        return alert;
+    }
 })(jQuery);
