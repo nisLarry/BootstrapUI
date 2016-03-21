@@ -183,4 +183,45 @@
         runFunction(callback);
         return alert;
     }
+
+    /**
+     * (特別注意，本部份功能需要加入(github)smalot/bootstrap-datetimepicker插件才能正常運作)
+     * 建立一個日期時間選擇器，預設為天類型
+     * @param datetimepickerName 日期選擇器名稱
+     * @param selecterType 日期選擇器類型。目前僅支持小時('hour')和天('day')類型
+     * @returns {*|HTMLElement}
+     */
+    $.bootstrapui_datetimepicker = function(datetimepickerName,selecterType){
+        selecterType = selecterType || 'day';
+        var format = 'yyyy-mm-dd';
+        var minView = 2;
+        switch (selecterType){
+            case 'hour':
+                format = 'yyyy-mm-dd hh:ii';
+                minView = 0;
+                break;
+            case 'day':
+                format = 'yyyy-mm-dd';
+                minView = 2;
+                break;
+            default:
+                format = 'yyyy-mm-dd';
+                minView = 2;
+        }
+
+        var datetimepicker = $(" <input id='"+datetimepickerName+"' type='text' placeholder='請選擇時間…' class='form_datetime'>");
+
+        datetimepicker.datetimepicker({
+            format: format,
+            minView: minView,
+            todayBtn: true,
+            clearBtn: true,
+            todayHighlight: true,
+            language:'zh-CN',
+            minuteStep:10,
+            autoclose:true
+        });
+        return datetimepicker;
+    }
+
 })(jQuery);
