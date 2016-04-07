@@ -131,7 +131,7 @@
      * @returns {*|HTMLElement}
      */
     $.bootstrapui_dropbox = function (dropboxName, btnclass, selectfield, callback) {
-        selectfield = selectfield || {0:"請選擇..."}
+        selectfield = selectfield || {0:"請選擇..."};
         var dropboxselectitem = "";
         var firstValue=selectfield[Object.keys(selectfield)[0]];
         var firstKey = Object.keys(selectfield)[0];
@@ -140,7 +140,7 @@
         }
         var dropboxselector = "<ul id='"+dropboxName+"_selector' class='dropdown-menu' aria-labelledby='"+dropboxName+"_btn'>" + dropboxselectitem + "</ul>";
         var dropbutton =
-            "<button class='btn " + btnclass + " dropdown-toggle' type='button' id='"+dropboxName+"_btn' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'><span class='btn-text'>" + firstValue + "</span><span class='caret'></span></button>" + dropboxselector;
+            "<button class='btn " + btnclass + " dropdown-toggle' type='button' id='"+dropboxName+"_btn' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'><span class='btn-text'>" + firstValue + "</span><span class='caret'></span></button>";
 
         var dropbox = $("<div id='" + dropboxName + "' class='dropdown btn-group' dropbox-value='"+firstKey+"'>" + dropbutton + dropboxselector + "</div>");
 
